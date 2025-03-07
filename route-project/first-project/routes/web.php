@@ -8,12 +8,27 @@ Route::get('/', function () {
 
 
 
+Route::get("/post/{id}/comment/{comment}",function(string $id , string $com){
+    if($id){
+        return "<h1>Post id  id : $id and post comment is : $com";
+    }else{
+        return "<h1>No post id and comment found../.....</h1>";
+    }
+})->where('id','[0-9]+')->whereAlpha('comment');
+
+
+
+// is is use for regular expression 
+// Route::get("/post/{commentname}",function(string $comment) {
+//        return "<h1>Post comment is a :$comment</h1>";
+//     })->where('commentname','[a-zA-Z]+');
+       // })->where('commentname','[0-9]+');
 
 
 // user for predefined value 
-Route::get("/post/{commentname}",function(string $comment) {
-   return "<h1>Post comment is a :$comment</h1>";
-})->whereIn('commentname',['song','music','movi']);
+// Route::get("/post/{commentname}",function(string $comment) {
+//    return "<h1>Post comment is a :$comment</h1>";
+// })->whereIn('commentname',['song','music','movi']);
 
 
 
