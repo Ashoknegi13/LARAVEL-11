@@ -7,7 +7,6 @@ Route::get('/', function () {
 });
 
 
-
 Route::get("/post/{id}/comment/{comment}",function(string $id , string $com){
     if($id){
         return "<h1>Post id  id : $id and post comment is : $com";
