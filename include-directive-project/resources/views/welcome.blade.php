@@ -1,17 +1,10 @@
-@php
- $fruits = [ 'one'=>'ashok','two'=>'annu' ,'three'=>'anita'  ];   
- $value = "hello";
-@endphp
-
-
-  {{--  @includeWhen(empty($value),'pages.header',['names'=>$fruits])  no file include because condition false --}}
-
-@includeUnless(empty($value), 'pages.header', ['names' => $fruits]) 
-
-{{-- @include('pages.header',['names'=>$fruits]) --}}
-
-@includeif('pages.content')
-
-<h3>This is home page </h3>
-
-@include('pages.footer')
+           @include('pages.header')
+           
+           <h2>Home Page</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti dolores, 
+               doloribus accusamus velit debitis accusantium quae tenetur aliquam at laborum 
+               ullam assumenda nulla blanditiis...</p>
+        </div>
+       @include('pages.sidebar')
+@include('pages.footer')      
+      
